@@ -1,0 +1,31 @@
+{% extends 'base.html' %}
+{% load static %}
+{% load django_bootstrap5 %}
+{% bootstrap_css %}
+{% block css %}{% endblock %}
+{% block body %}
+  <h1>게시판</h1>
+  <table class="table">
+    <thead>
+      <tr class="table-warning">
+        <th scope="col">pk</th>
+        <th scope="col">리뷰제목</th>
+        <th scope="col">영화제목</th>
+      </tr>
+    </thead>
+    {% for review in reviews %}
+      <tbody>
+        <tr class="table-warning">
+          <td>{{ review.pk }}</td>
+          <td>
+            <a href="#">
+              {{ review.title }}
+            </a>
+          </td>
+          <td>{{ review.movie_name }}</td>
+        </tr>
+      </tbody>
+    {% endfor %}
+  </table>
+{% endblock %}
+{% bootstrap_javascript %}
