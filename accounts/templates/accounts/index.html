@@ -1,3 +1,4 @@
+{% extends 'base.html' %}
 {% load django_bootstrap5 %}
 {% bootstrap_css %}
 {% block css %}{% endblock %}
@@ -16,7 +17,7 @@
         <tr>
           <td>{{ users.pk }}</td>
           <td>
-            {% comment %} <a href="{% url 'accounts:detail' users.pk %}"> {% endcomment %}
+            <a href="{% url 'accounts:detail' users.pk %}">
               {{ users.username }}
             </td>
           </tr>
