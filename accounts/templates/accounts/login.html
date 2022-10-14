@@ -1,0 +1,16 @@
+{% load django_bootstrap5 %}
+{% bootstrap_css %}
+{% block css %}
+{% endblock %}
+{% block body %}
+<h1>로그인</h1>
+<form action="" method="POST">
+    {% csrf_token %}
+    {% bootstrap_form form %}
+    {% comment %} {{ review_form.as_p }} {% endcomment %}
+    {% bootstrap_button button_type="submit" content="로그인" %}
+    <a href="{% url 'accounts:signup' %}" class="btn btn-primary active" role="button" aria-pressed="true">회원가입</a> 
+  </form>
+
+{% endblock body %}
+{% bootstrap_javascript %}
