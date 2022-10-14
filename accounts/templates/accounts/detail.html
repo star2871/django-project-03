@@ -3,7 +3,9 @@
 {% bootstrap_css %}
 {% block css %}{% endblock %}
 {% block body %}
-  <h1>{{ user.username }}님의 프로필</h1>
+  <h1>
+    <a href='{% url 'accounts:update' %}'>{{ user.username }}
+    </a>님의 프로필</h1>
   <p>{{ user.email }}</p>
   <p>{{ user.last_name }}
     |
