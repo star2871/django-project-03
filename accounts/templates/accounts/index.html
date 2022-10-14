@@ -1,1 +1,27 @@
-<h1>하하</h1>
+{% load django_bootstrap5 %}
+{% bootstrap_css %}
+{% block css %}{% endblock %}
+{% block body %}
+  <h1>회원목록</h1>
+  <table class="table">
+    <thead>
+      <tr>
+        <th scope="col">#</th>
+        <th scope="col">username</th>
+      </tr>
+    </thead>
+    {% for users in user %}
+      <tbody>
+
+        <tr>
+          <td>{{ users.pk }}</td>
+          <td>
+            {% comment %} <a href="{% url 'accounts:detail' users.pk %}"> {% endcomment %}
+              {{ users.username }}
+            </td>
+          </tr>
+        </tbody>
+      {% endfor %}
+    </table>
+  {% endblock body %}
+  {% bootstrap_javascript %}
