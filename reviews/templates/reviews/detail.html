@@ -1,0 +1,20 @@
+{% extends 'base.html' %}
+{% load static %}
+{% load django_bootstrap5 %}
+{% bootstrap_css %}
+{% block css %}{% endblock %}
+{% block body %}
+  <div>
+
+    <h1>{{ review.title }}</h1>
+    <h3>영화제목 :{{ review.movie_name }}</h3>
+    <h3>영화내용 :
+      {{ review.content }}</h3>
+    <h3>평점 :
+      {{ review.grade }}</h3>
+
+    <a href="#">수정</a>
+    <a href="#">삭제</a>
+  </div>
+{% endblock %}
+{% bootstrap_javascript %}
