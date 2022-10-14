@@ -57,3 +57,10 @@ def update(request, pk):
         "review_form": review_form,
     }
     return render(request, "reviews/update.html", context)
+
+
+def delete(request, pk):
+    # pk에 해당하는 글 삭제
+    review = Review.objects.get(id=pk)
+    review.delete()
+    return redirect("reviews:list")

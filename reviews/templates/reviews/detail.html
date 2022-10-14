@@ -13,7 +13,7 @@
       {{ review.grade }}</h3>
 
     <a href="{% url 'reviews:update' review.pk %}">수정</a>
-    <a href="#">삭제</a>
+    <a href="{% url 'reviews:delete' review.pk %}">삭제</a>
   </div>
 {% endblock body %}
 {% bootstrap_javascript %}
