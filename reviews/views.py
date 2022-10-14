@@ -26,3 +26,13 @@ def index(request):
         "reviews": reviews,
     }
     return render(request, "reviews/index.html", context)
+
+
+def detail(request, pk):
+    # 특정 글을 가져온다.
+    review = Review.objects.get(pk=pk)
+    # template에 객체 전달
+    context = {
+        "review": review,
+    }
+    return render(request, "reviews/detail.html", context)

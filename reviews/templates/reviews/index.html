@@ -18,7 +18,7 @@
         <tr class="table-warning">
           <td>{{ review.pk }}</td>
           <td>
-            <a href="#">
+            <a href="{% url 'reviews:detail' review.pk %}">
               {{ review.title }}
             </a>
           </td>
