@@ -1,5 +1,4 @@
 {% extends 'base.html' %}
-{% load static %}
 {% load django_bootstrap5 %}
 {% bootstrap_css %}
 {% block css %}{% endblock %}
@@ -13,8 +12,8 @@
     <h3>평점 :
       {{ review.grade }}</h3>
 
-    <a href="#">수정</a>
+    <a href="{% url 'reviews:update' review.pk %}">수정</a>
     <a href="#">삭제</a>
   </div>
-{% endblock %}
+{% endblock body %}
 {% bootstrap_javascript %}
